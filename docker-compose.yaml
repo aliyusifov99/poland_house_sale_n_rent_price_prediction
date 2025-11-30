@@ -1,0 +1,25 @@
+version: '3.11'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models # Mount models so you don't have to rebuild if you retrain
+    environment:
+      - PORT=8000
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    environment:
+      # Crucial: This tells Streamlit to talk to the 'backend' container
+      - API_URL=http://backend:8000/predict
+    depends_on:
+      - backend
