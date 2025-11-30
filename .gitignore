@@ -1,0 +1,38 @@
+# --- User Specific Exclusions ---
+data/
+models/
+mlruns/
+
+# --- Python Basics ---
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Virtual Environments ---
+# Common names for virtual envs
+env/
+venv/
+.venv/
+.env
+
+# --- Jupyter Notebooks ---
+# Checkpoints created by Jupyter
+.ipynb_checkpoints
+
+# --- IDE & Editor Settings (Optional) ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- Distribution / Packaging ---
+build/
+dist/
+*.egg-info/
+
+# --- Logs & Sensitive Information ---
+*.log
+# Be very careful not to commit API keys!
+secrets.json
+config.yaml
